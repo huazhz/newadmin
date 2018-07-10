@@ -1,0 +1,168 @@
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:400,700);
+#cssmenu,
+#cssmenu ul,
+#cssmenu ul li,
+#cssmenu ul li a,
+#cssmenu #menu-button {position:relative; z-index:999;display: inline-block; }
+
+#cssmenu #menu-button {display: none;}
+#cssmenu {}
+#cssmenu > ul {margin-bottom: 0;padding: 0;}
+#cssmenu > ul > li {display:inline-block;padding: 7px;line-height: 30px;}
+
+#cssmenu > ul > li > a { color: #330066;font-weight: 400;/*padding: 10px 3.5px;*/text-transform: uppercase;}
+#cssmenu > ul > li:last-child > a {padding-right: 0px;}
+
+#cssmenu > ul > li:hover > a, #cssmenu > ul > li > a:hover {
+    color: #0099ff;
+    border-bottom: 2px solid #eee;
+}
+#cssmenu > ul > li.active > a {
+    color: #0099ff;
+    border-bottom: 2px solid #eee;
+}
+#cssmenu ul ul { 
+    position: absolute;  
+    left: -9999px;
+    top: 0px;
+    opacity: 0;
+    -webkit-transition: top 0.2s ease, opacity 0.2s ease-in;
+    -moz-transition: top 0.2s ease, opacity 0.2s ease-in;
+    -ms-transition: top 0.2s ease, opacity 0.2s ease-in;
+    -o-transition: top 0.2s ease, opacity 0.2s ease-in;
+    transition: top 0.2s ease, opacity 0.2s ease-in;
+}
+#cssmenu > ul > li > ul {
+    background: #fff none repeat scroll 0 0;
+    margin-left: 15px;
+    padding: 10px;
+    top: 45px;
+    width: 245px;
+    text-align: left;
+}
+#cssmenu ul ul li {display:block;}
+#cssmenu > ul > li:hover > ul { left: 0px; opacity: 1;}
+#cssmenu ul ul ul { }
+#cssmenu.align-right ul ul ul {
+    padding-right: 6px;
+}
+#cssmenu ul ul > li:hover > ul {
+    left: 200px;
+    top: 0;
+    opacity: 1;
+}
+#cssmenu ul ul li a {
+    color: #303030;
+    font-size: 15px;
+    line-height: 17px;
+    padding: 5px 15px;
+    text-align: left;
+    text-transform: capitalize;
+}
+#cssmenu ul ul li:hover > a {color: #330066;}
+#cssmenu ul ul li.active > a {color: #0099ff;}
+#cssmenu ul ul li:hover > a {
+    background: url('arrow2.png') no-repeat 5px center;
+    margin-left: 0px
+}
+#cssmenu ul ul li.active:hover > a {
+    background: url('arrow1.png') no-repeat 5px center;
+    margin-left: 0px
+}
+#cssmenu > ul > li > ul::after {
+    position: absolute;
+    display: block;
+    border: 1px solid red;
+}
+#cssmenu ul ul li.has-sub > a::after {
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-left-color: #fff;
+    left: 0px;
+    top: 14px;
+}
+#cssmenu ul ul li:first-child {margin-top:0px;}
+#cssmenu > ul > li > ul > li:first-child {}
+
+@media all and (max-width: 760px) {
+    #cssmenu { width: 100%;  float:right;  background: #0099ff;}
+    #cssmenu > ul {   display: none; }
+    #cssmenu > ul.open { display: block; border-top: 1px solid rgba(0, 0, 0, 0.1);padding: 0 20px;/*left: 10px;*/}
+    #cssmenu > ul > li,
+    #cssmenu.align-right > ul > li { float: none;  display: block;}
+    #cssmenu > ul > li > a {color: #fff;}
+    #cssmenu > ul > li:hover > a,
+    #cssmenu > ul > li > a:hover,
+    #cssmenu > ul > li.active > a {  color: #330066; }
+    #cssmenu #menu-button { 
+        color: #fff;
+        cursor: pointer;
+        display: block;
+        padding: 14px 25px;
+        text-align: left;
+        text-decoration: none;
+        text-transform: uppercase;
+    }
+
+    #cssmenu ul ul,
+    #cssmenu ul li:hover > ul,
+    #cssmenu > ul > li > ul,
+    #cssmenu ul ul ul,
+    #cssmenu ul ul li:hover > ul {
+        border: medium none;
+        left: -4px;
+        opacity: 1;
+        padding: 10px;
+        position: relative;
+        right: auto;
+        text-align: left;
+        top: auto;
+        width: 100%;
+    }
+    #cssmenu ul ul li {width: 100%;}
+    #cssmenu ul ul li a {
+        box-shadow: none;
+        padding-left: 15px;
+        width: 100%;
+    }
+    #cssmenu ul ul ul li a {padding-left: 45px;}
+    #cssmenu ul ul li:first-child > a,
+    #cssmenu ul ul li:last-child > a {
+        border-radius: 0;
+    }
+    #cssmenu #menu-button::after {
+        display: block; 
+        content: ''; 
+        position: absolute;
+        height: 7px;
+        width: 22px;
+        border-top: 2px solid #fff;
+        border-bottom: 2px solid #fff;
+        right: 25px;
+        top: 18px;
+    }
+    #cssmenu #menu-button::before {
+        display: block;
+        content: '';
+        position: absolute;
+        height: 3px;
+        width: 22px;
+        border-top: 2px solid #fff;
+        right: 25px;
+        top: 28px;
+    }
+
+    #cssmenu ul ul li:first-child {
+        /*        margin-top: 10px; */
+    }
+}
+
+@media screen and (min-width: 64em) {
+    #cssmenu > ul > li:last-child {padding-right: 0px;}
+    #cssmenu > ul > li {padding: 6px 12px;}
+}
+
+@media screen and (min-width: 64em) {
+    #cssmenu > ul > li {padding: 13px 14px;}
+}

@@ -1,0 +1,411 @@
+/* Small only */
+@media screen and (max-width: 39.9375em) {
+#header{
+	margin-top:0;
+}
+.primary-menu{
+	position:relative;
+}
+.search-input{
+	width:100%;
+	left:0;
+}
+#slide-menu{
+	width:100%;
+}
+#section-three .action{
+	margin-bottom:2rem;
+}
+.skip-header ul li .skip-form{
+	left:0;
+	width:100%;
+}
+main {
+  margin-bottom:2.25rem; }	
+  
+.sidebar{
+	  margin-bottom:3.25rem;
+	
+}
+
+
+
+
+.footer-header .logo{
+		margin-bottom:1.5rem;
+	}
+
+.skip-header ul li.search{
+	padding:0.625rem 0;	
+}
+footer#footer ul.address{
+	margin:0 0 2rem;
+}
+.footer-body{
+	margin:2rem 0 0;
+}
+
+#slide-menu .quick-links a{
+	clear:both;
+	margin-left:1.1875rem;
+}
+.quick-links a{
+	margin-bottom:1.1875rem;
+}
+
+
+.front-page-slider .swiper-button-prev, .front-page-slider .swiper-button-next{
+	width:10px;
+	height:17px;
+	background-size:cover
+}
+
+	}
+
+/* Medium and up 40em 640px*/
+@media screen and (min-width: 40em) {
+	
+
+	
+.skip-header ul{
+	width:100%;
+}
+.border-left-full{
+	position:relative;
+}
+
+.border-left-full:before{
+	background-color:#e6e6e6;
+	position:absolute;
+	content:"";
+	left:0;
+	top:0;
+	height:calc(100% - 7.9rem);
+	width:1px;
+}
+.border-left-full.blfs::before{
+	height:calc(100% - 6.3rem);
+}
+
+
+main {
+  margin-bottom:6.25rem; }	
+footer#footer ul.address{
+	margin:0 0 1rem;
+}
+.footer-body{
+	margin:3.125rem 0 0;
+}
+footer#footer nav {
+	margin-bottom:1rem;
+}
+
+
+.quick-links{
+	float:right;
+}
+
+
+.front-page-slider .swiper-button-prev, .front-page-slider .swiper-button-next{
+	width:20px;
+	height:34px;
+}
+
+.front-page-slider .swiper-button-prev{
+	left:1.875rem;
+}
+.front-page-slider .swiper-button-next{
+	right:1.875rem;
+	}
+	
+
+
+
+
+
+	}
+
+/* Medium only */
+@media screen and (min-width: 40em) and (max-width: 63.9375em) {
+.search-input{
+	width:260px;
+}
+#slide-menu{
+	width:260px;
+}
+.skip-header ul li .skip-form{
+	width:260px;
+}
+
+#section-two .row .columns:nth-child(3),
+#section-two .row .columns:nth-child(5){
+	clear:both;
+}
+
+	}
+	
+@media screen and (max-width: 63.9375em) {	
+#header{
+	z-index:99;
+}
+.body-cover{
+	background-color:rgba(255,255,255,0.7);
+	display:none;
+	position:fixed;
+	width:100%;
+	height:100%;
+	z-index:999;
+}
+#slide-menu{
+	height:100%;
+	position:fixed;
+	top:0;
+	left:-100%;
+	background-color:rgba(255,255,255,0.95);
+	z-index:9999;
+	
+	-webkit-transition: 0.2s ease-in-out;
+	-moz-transition: 0.2s ease-in-out;
+	-o-transition: 0.2s ease-in-out;
+	transition: 0.2s ease-in-out;
+	-webkit-transition-duration: 0.2s;
+	-moz-transition-duration: 0.2s;
+	-o-transition-duration: 0.2s;
+	transition-duration: 0.2s;
+}
+#slide-menu.active{
+	left:0;
+}
+.primary-menu{
+	margin:0 0 1rem;
+}
+
+.slide-menu-close{
+	float:right;
+	font-size:1.5rem !important;
+	cursor:pointer;
+	margin:1rem 1rem 0;
+}
+.slide-menu-close:hover,
+.slide-menu-close:focus{
+	color:#2a3062;
+	
+}
+.skip-header ul{
+	display:table;
+}
+.skip-header ul li{
+	display:table-cell;
+	text-align:center;
+	width:1%;
+}
+ .skip-header ul li.search i:after{
+	background-color:#ababab;
+	content:'';
+	left:0;
+	top:16px;
+	height:0.9375rem;
+	width:1px;
+	position:absolute;
+}
+.skip-header ul li.search i:after{
+	top:1px;
+}
+
+.search-input{
+	background-color:#0c919b;
+	padding:3rem 1rem 1rem;
+	top:43px;
+}
+.search-input-close{
+	color: #2a3062 !important;
+	cursor: pointer;
+	font-size: 1.3rem !important;
+	position: absolute;
+	right: 1rem;
+	top: 1rem;
+}
+
+.search-input.active{
+	display:block;
+}
+
+.skip-header ul li .skip-header-dd.active{
+	display:block;
+}
+
+.skip-header ul li .skip-form{
+	background-color:#dee2fe;
+}
+
+
+
+
+.primary-menu ul, .primary-menu ul li{
+	width:100%;
+	float:left;
+}
+.primary-menu ul li{
+	
+}
+.primary-menu ul li a{
+	width:100%;
+	padding:6px 1rem;
+}
+
+.skip-header ul li.menu-bars{
+	cursor:pointer;
+}
+.skip-header ul li.menu-bars i{
+	font-size:18px;
+}
+
+.skip-header ul li:hover i{
+	color:#ffffff;
+}
+
+li.dropdown-menu .dd{
+	position:relative;
+	top:0;
+	width:100%;
+}
+
+li.dropdown-menu.active .dd{
+	display:block;
+}
+
+
+footer#footer .quick-links{
+	margin-left:-0.9375rem;
+}
+
+	
+}
+
+	
+
+/* Large and up 64em = 1024 px*/
+@media screen and (min-width: 64em) {
+#header{
+	margin-top:2.75rem;
+	z-index:9;
+}
+#header .logo{
+	width:auto;
+}
+.skip-header{
+	position:absolute;
+}	
+.primary-menu{
+	position:absolute;
+	bottom:-1.875rem;
+	right:-1rem;
+}
+.menu > li > a{
+	padding-bottom:1.875rem;
+}
+.skip-header ul{
+	width:auto;
+}
+
+.skip-header ul li.phone a{
+	padding-right:0;
+}
+
+.skip-header ul li.search:hover .search-input,
+.skip-header ul li.search:focus .search-input{
+	display:block;
+}
+
+.skip-header ul li:hover .skip-header-dd,
+.skip-header ul li:focus .skip-header-dd,
+li.dropdown-menu:hover .dd,
+li.dropdown-menu:focus .dd{
+	display:block;
+}
+
+
+#section-two .row .columns:nth-child(4),
+#section-two .row .columns:nth-child(7){
+	clear:both;
+}
+
+
+
+
+li.dropdown-menu .dd{
+	position:absolute;
+	top:51px;
+	width:235px;
+}
+
+
+.search-input{
+	width:170px;
+	right:.7rem;
+}
+
+.sidebar .sidebar-blog{
+	margin-right:1rem;
+}
+
+
+.skip-header ul{
+	float:right;
+}
+.skip-header ul li{
+	float:left;
+}
+
+.skip-header ul li a{
+	padding:0.625rem 1.25rem;
+}
+	
+.skip-header ul li .skip-form{
+	width:260px;
+}
+
+.border-left-full:before{
+	left:-2rem;
+}
+	
+.skip-header ul li{
+	padding:0;
+}
+.skip-header ul li.search{
+	padding:0.625rem 1.25rem;
+	position:relative;	
+}
+
+	}
+
+/* Large only 75em = 1200px*/
+@media screen and (min-width: 64em) and (max-width: 74.9375em) {
+	
+#header {
+    padding: 1.875rem 0.9375rem;
+}
+.skip-header {
+    padding: 0 0.9375rem;
+}
+
+.primary-menu > ul > li > a	{
+	font-size:0.9rem;
+}
+
+li.dropdown-menu .dd{
+	top:47px;
+
+}
+	}
+	
+@media screen and (min-width: 75em) {
+	
+}
+@media screen and (min-width: 81.25em) {
+	#header > .row,
+	.skip-header > .row{
+		max-width: 80rem;
+		
+	}
+}

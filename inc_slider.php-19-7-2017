@@ -1,0 +1,54 @@
+<?  
+$banners = getAllData('exceed_photos', "status=1 and `section`='mainbanner' order by `order`");
+?>
+ 			<div id="wrapper">
+                <div class="slider-wrapper theme-default">
+                    <div class="position top"></div>
+                    <div id="slider" class="nivoSlider">
+                    	<?
+        				for ($i = 0; $i < sizeof($banners); $i++)
+        				{
+                 		?>
+               			<img src="<?=$sitePath?><?=$banners[$i]['photourl']?>" alt="<?=$banners[$i]['title']?>" title="#caption<?=$i;?>">
+                        <?
+                        }
+                        ?>
+                    </div>
+                    <div class="position bottom"></div>
+                    <?  
+    				for ($j = 0; $j < sizeof($banners); $j++)
+    				{  
+   					?>
+			        <div id="caption<?=$j;?>" class="nivo-html-caption">
+		           <h2><?=unFormatData($banners[$j][1])?></h2>
+		           <p><?=unFormatData($banners[$j][2])?></p>
+		           <? 
+		           if ($banners[$j]['linkURL'] != '')
+		           {
+		           ?>
+		            <a class="button purplebg" href="<?=$sitePath?><?=$banners[$j]['linkURL']?>" target="<?=$banners[$j]['linkTarget']?>"><i class="fa fa-angle-right" aria-hidden="true"></i> <?=$banners[$j]['urlTitle']?></a></div>
+		           <? 
+		           }
+		           ?>
+		          </div>
+			         <?
+			         }
+			         ?>
+                </div>
+            </div>
+
+<?
+$customFooterTags .= '
+<script src="'.$sitePath.'plugins/nivo-slider/js/jquery.nivo.slider.js"></script>
+<script type="text/javascript">
+    $( document ).ready(function() {
+        $("#slider").nivoSlider({
+		 animSpeed: 1000,
+		 pauseTime: '.$_SETTINGS['home-banner-time'].'000,
+		 effect:"'.$_SETTINGS['home-banner-effect'].'"	
+		});
+		$( ".nivo-caption" ).wrap( "<div class=\"row\"></div>" );
+    });
+</script>
+';
+?>

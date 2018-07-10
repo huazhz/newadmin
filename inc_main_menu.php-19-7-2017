@@ -1,0 +1,52 @@
+<div class="menu-bar">
+                        <div id="cssmenu">
+                            <ul class="open">
+                            <?
+                            $activeNav[$navID]  = 'active';
+                            $mainNav = getAllData('exceed_navigation', 'status=1 order by `order`');
+                            for ($i = 0; $i < sizeof($mainNav); $i++)
+                            {
+                            ?>
+                            <li class="<?=$activeNav[$mainNav[$i][0]]?>"><a href="<?=$sitePath?><?=$mainNav[$i]['url'];?>">
+							<?=$mainNav[$i][1];?></a>
+                            <?
+                            $subNav = getAllData('exceed_pages', 'navigation != 1 and navigation = '.$mainNav[$i][0].' and status=1 order by `order`');
+                            if(sizeof($subNav) > 1)
+                            {
+                            ?>
+                            <ul>
+                            <? 
+			               	for ($j = 0; $j < sizeof($subNav); $j++)
+							{
+							?> 
+			                	<li><a href="<?=$subNav[$j]['pageURL'];?>"><?=$subNav[$j]['title'];?></a></li>
+			                <? 
+							} 
+							?>
+                            </ul>
+                            <?
+                            }
+                            ?>
+                            </li>
+                            <?
+                            }
+                            ?>
+                            </ul> 
+                        </div>
+                    </div>
+<script>
+ $(document).ready(function() {
+ 
+ 	var screen_width = screen.width;
+ 	if(screen_width <= 760){
+		$("#cssmenu > ul > li > ul").slideUp();
+
+		$("#cssmenu > ul > li > a").click(function(){
+			if($(this).next("ul").length > 0) {
+			$(this).next("ul").slideDown();
+			return false;
+			}
+		});
+	}
+	});
+</script>					

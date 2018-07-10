@@ -1,0 +1,28 @@
+Options +FollowSymlinks
+
+RewriteEngine on
+
+RewriteCond %{HTTP_HOST} ^www\.(.*)$ [NC]
+
+RewriteRule ^(.*)$ http://%1/$1 [R=301,L]
+
+RewriteRule ^.*\.(gif|png|jpg|jpeg|bmp|css|wav|mp3|avi|mov|mpg|js|php|zip|ico|pdf|doc|docx|txt|xls|xlsx|ppt|pptx)$ - [NC,L]
+
+RewriteRule ^(webadmin|user)($|/) - [L]
+
+RewriteCond %{REQUEST_URI} !index.php
+
+RewriteRule ^([^/]+)/?$ index.php?page=$1 [L]
+
+RewriteCond %{REQUEST_URI} !index.php
+
+RewriteRule ^([^/]+)/([^/]+)/?$ index.php?page=$1&var=$2
+
+ErrorDocument 404 /404
+
+ErrorDocument 403 /404
+
+
+
+
+

@@ -1,0 +1,17 @@
+<script>
+var cURL = window.opener.location.href;
+if (cURL.indexOf('id=') > 0){
+var pURL = window.opener.document.getElementById('pageXURL').value;
+document.location.href='/'+pURL;
+}
+// Prevent from DOM clobbering.
+if ( typeof window.opener._cke_htmlToLoad == 'string' ) {
+	var doc = document;
+	doc.open();
+	doc.write( window.opener._cke_htmlToLoad );
+	doc.close();
+
+	delete window.opener._cke_htmlToLoad;
+}
+
+</script>

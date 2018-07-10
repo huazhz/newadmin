@@ -1,0 +1,134 @@
+<?
+$actual_link = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
+$urlStr = str_replace($sitePath, '', $actual_link);
+$removeString = array('http://', 'https://', 'www.');
+$urlStr = str_replace($removeString, '', $urlStr);
+$customSEO = getDetails('exceed_custom_seo', "urlKey LIKE '%".$urlStr."'");
+if ($customSEO[2] != '') $_SETTINGS['seo-title'] = $customSEO[2];
+if ($customSEO[3] != '') $_SETTINGS['seo-keywords'] = $customSEO[3];
+if ($customSEO[4] != '') $_SETTINGS['seo-desc'] = $customSEO[4]; 
+?>
+<!doctype html>
+<html class="no-js" lang="en">
+<head>
+        <meta charset="utf-8" />
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="shortcut icon" href="<?=$sitePath?>favicon.ico" type="image/x-icon" />
+		<title><?=$_SETTINGS['seo-title']?></title>
+		<meta name="keywords"  content="<?=$_SETTINGS['seo-keywords']?>">
+		<meta name="description"  content="<?=$_SETTINGS['seo-desc']?>">        
+		<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+		<link rel="stylesheet" href="<?=$sitePath?>fonts/font-awesome/css/font-awesome.css" />
+        <link rel="stylesheet" href="<?=$sitePath?>foundation/css/foundation.min.css">
+        <link rel="stylesheet" href="<?=$sitePath?>plugins/menu/styles.css">
+        <?=$customHeaderTags?> 
+        <link rel="stylesheet" href="<?=$sitePath?>style.css">
+        <link rel="stylesheet" href="<?=$sitePath?>css/responsive.css"> 
+		<style>
+		<?=unFormatData($_SETTINGS['css-settings-all-website'])?>
+		</style>
+		<?=stripslashes($_SETTINGS['add-on-javascript-header'])?>
+		<script src="<?=$sitePath?>js/jquery.js"></script>
+		 
+</head>
+<body class="home page">
+        <!-- Fixed Button -->
+         	<?
+             foreach( $_SETTINGS[$settingPrefix.'header-link']['url'] as $k => $v)
+             {
+                if ($v != '')
+                {
+                    echo '<a class="button purplebg fixed" href="'.addsitepath($_SETTINGS[$settingPrefix.'header-link']['url'][$k],$sitePath).'">';
+                    echo '<i class="fa fa-angle-right" aria-hidden="true"></i> '.$_SETTINGS[$settingPrefix.'header-link']['text'][$k].'</a>';
+                }
+             }
+             ?> 
+        <!-- End Fixed Button -->
+
+        <!-- Top Section -->
+        <div class="top-bar">
+            <div class="row">
+                <div class="small-12 medium-12 large-7 large-offset-2 columns">
+                <ul>
+                	<?
+		            $_SETTINGS['headerbar-link'] = json_decode(stripslashes($_SETTINGS['headerbar-link']), true);
+					for ($i = 0; $i < sizeof($_SETTINGS['headerbar-link']['url']); $i++)
+					{
+					if ($_SETTINGS['headerbar-link']['url'][$i] != '')
+					{
+					?><li><a class="purple" href="<?=addsitepath($_SETTINGS['headerbar-link']['url'][$i], $sitePath)?>"><?=$_SETTINGS['headerbar-link']['text'][$i]?></a></li>
+					<?
+					}
+					else if ($_SETTINGS['headerbar-link']['text'][$i] != '')
+					{
+					?><li><?=$_SETTINGS['headerbar-link']['text'][$i]?></li>
+					<?
+					}
+					}
+		            ?>
+		         </ul>
+                </div>
+                <div class="small-12 medium-12 large-3 columns">
+                    <ul>
+                    	<?
+                    	$smallLogo = 'uploads/small-logo-file.png';
+	                 	if (file_exists($smallLogo))
+	                 	{
+                    	?>
+                    	<li><a href="<?=$_SETTINGS['small-logo-url']?>" target="<?=$_SETTINGS['small-logo-urltarget']?>"><img src="<?=$sitePath?><?=$smallLogo?>"></a></li>&nbsp;&nbsp;&nbsp;&nbsp;
+                    	<?
+                    	}
+                    	?>
+                        <?
+			            foreach( $_SETTINGS[$settingPrefix.'social-link']['url'] as $k => $v)
+			            {
+			                if ($v != '')
+			                {
+			                    $icon = getIconByCode(ltrim($_SETTINGS[$settingPrefix.'social-link']['icon'][$k], 'u'));
+			                    echo '<li><a href="'.$_SETTINGS[$settingPrefix.'social-link']['url'][$k].'" target="_blank">';
+			                    echo '<i class="fa fa-'.$icon.'"></i></a></li>';
+			                }
+			            }
+			            ?>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <!-- End Top Section -->
+
+        <!-- Header section -->
+        <header <?=$headerStyle?>>
+            <div class="row">
+                <div class="small-12 medium-4 large-4 columns">
+                    <a href="<?=$sitePath?>"><img src="<?=$sitePath?>images/logo.png" alt="" /></a>
+                </div>
+                <div class="small-12 medium-8 large-8 columns">
+
+                    <div class="text-right">
+                        <span class="blue"><?=unFormatData($_SETTINGS['header-desc'])?></span>
+                        	<?
+			             foreach( $_SETTINGS[$settingPrefix.'header-link']['url'] as $k => $v)
+			             {
+			                if ($v != '')
+			                {
+			                    echo '<a class="button bluebg hide-for-small-only" href="'.addsitepath($_SETTINGS[$settingPrefix.'header-link']['url'][$k],$sitePath).'">';
+			                    echo $_SETTINGS[$settingPrefix.'header-link']['text'][$k].' <i class="fa fa-angle-double-right" aria-hidden="true"></i></a>';
+			                }
+			             }
+			             ?> 
+                    </div>
+
+                    <?
+                    include "inc_main_menu.php";
+                    ?>
+                </div>                        
+            </div>
+			<?
+			if ($navID == 1)
+			include "inc_slider.php";
+			?>
+           
+
+        </header> 
+  

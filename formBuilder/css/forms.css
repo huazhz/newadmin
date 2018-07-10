@@ -1,0 +1,48 @@
+.form-renders {margin:0px auto;}
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-renders span.required {color:red;}
+.form-renders h3 {}
+.form-renders label {display:inline-block !important;padding:10px 0px 5px 0px;font-size:16px;word-break: keep-all;line-height:130%;}
+.form-renders input[type=text],.form-renders input[type=tel],.form-renders input[type=email],.form-renders input[type=color],.form-group input[type=number],.form-group input[type=file],.form-group input[type=date], .form-group input[type=password], .form-group select, .form-group textarea  {
+    font-weight: 300;
+    height: 33px;
+    color: #000;
+    width:95%;
+    padding: 5px 10px;
+    font-size: 16px;
+    font-family: 'Source Sans Pro', sans-serif;
+    margin-bottom: 20px;
+    float:left;
+border: 1px solid #dcdcdc;
+
+
+
+}
+
+.form-renders  p {font-family: 'Source Sans Pro', sans-serif;font-weight: 300;}
+.form-renders  input[type=tel] {width:180px;letter-spacing:3px;}
+.form-group textarea {height:auto;}
+
+.form-renders input::-webkit-input-placeholder {color: #000;}
+.form-renders input::-moz-placeholder {color: #000;}
+.form-renders input:-ms-input-placeholder  {color: #000;}
+.form-renders input:-moz-placeholder {color: #000;}
+
+.form-renders .form-group {margin:0px;;}
+.form-renders label {height:40px;width:100%;text-align:left;margin:0px;font-weight:600;}
+.form-renders label:empty { content:"\66";color:transparent;}
+
+.checkbox-group label, .radio-group label {padding:0px;font-size:14px;width:95%;font-size:16px;height:auto;padding:5px;font-weight:400;}
+.form-renders h1.header {
+    text-align: left;
+    color: #16216a;
+    color: #16216a;
+    font-weight: 900;
+    padding-bottom: 10px;
+    font-size: 24px;
+    line-height: 18px;
+    font-family: 'Lato', sans-serif;
+}
